@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: ${APP_NAME}
+    build: .
+    ports:
+      - "${APP_PORT}:3000"
+    environment:
+      - PORT=${APP_PORT}
+    restart: unless-stopped
